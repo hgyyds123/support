@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区规范 · 支持中心</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================= M3 深浅色主题 ================= */
+        :root { 
+            --bg-color: #FFFFFF; 
+            --surface: #F8F9FA;
+            --text-main: #1F1F1F; 
+            --text-sub: #444746; 
+            --border-color: #E0E0E0; 
+            --primary-blue: #0b57d0; 
+            --search-bg: #F0F4F9;
+        }
+        @media (prefers-color-scheme: dark) { 
+            :root { 
+                --bg-color: #131314; 
+                --surface: #1E1F20;
+                --text-main: #E3E3E3; 
+                --text-sub: #C4C7C5; 
+                --border-color: #444746; 
+                --primary-blue: #A8C7FA; 
+                --search-bg: #282A2C;
+            } 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* ================= 顶部导航 ================= */
+        .top-nav { 
+            height: 64px; display: flex; align-items: center; padding: 0 24px; 
+            background-color: var(--bg-color); position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .nav-left { display: flex; align-items: center; gap: 16px; font-size: 20px; color: var(--text-main); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; }
+        .nav-left span.title { font-weight: 400; }
+
+        /* ================= 主体内容 ================= */
+        .container { max-width: 800px; margin: 0 auto; padding: 32px 24px 64px 24px; }
+        
+        .breadcrumb { font-size: 14px; color: var(--text-sub); margin-bottom: 32px; }
+        .breadcrumb a { color: var(--primary-blue); font-weight: 500; }
+        
+        /* 核心标题区 */
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { 
+            width: 64px; height: 64px; border-radius: 50%; 
+            background-color: var(--search-bg); color: var(--text-sub);
+            display: inline-flex; align-items: center; justify-content: center; 
+            font-size: 32px; margin-bottom: 16px; 
+        }
+        .hero h1 { font-size: 32px; font-weight: 400; color: var(--primary-blue); margin-bottom: 8px; }
+        
+        /* 搜索框 */
+        .search-box { 
+            width: 100%; max-width: 600px; margin: 0 auto 48px auto;
+            height: 56px; border: 1px solid var(--border-color); border-radius: 8px;
+            display: flex; align-items: center; padding: 0 16px; 
+            background: var(--bg-color); box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .search-box span { color: var(--text-sub); margin-right: 12px; }
+        .search-box input { 
+            flex: 1; background: transparent; border: none; outline: none; 
+            font-size: 16px; color: var(--text-main); 
+        }
+
+        /* ================= 列表区块排版 ================= */
+        .section-block { margin-bottom: 40px; }
+        
+        .section-header { 
+            font-size: 22px; font-weight: 400; margin-bottom: 16px; 
+            padding-bottom: 12px; border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        
+        .link-list { display: flex; flex-direction: column; }
+        
+        .link-item { 
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 12px 0; font-size: 16px; 
+            color: var(--text-main); transition: color 0.2s;
+        }
+        .link-item:hover { color: var(--primary-blue); text-decoration: underline; }
+        .link-item span.icon { color: var(--text-sub); font-size: 20px; margin-top: 2px; }
+        
+        /* 分类说明块 */
+        .info-box { 
+            background-color: var(--surface); padding: 16px 20px; 
+            border-radius: 8px; margin-bottom: 16px; font-size: 14px; color: var(--text-sub);
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 24px 16px; }
+            .hero h1 { font-size: 26px; }
+            .section-header { font-size: 18px; }
+            .link-item { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <a href="../"><span class="material-symbols-outlined">arrow_back</span></a>
+            <span class="title">社区规范与帮助</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 面包屑 -->
+        <div class="breadcrumb">
+            <a href="../">帮助中心</a> <span style="margin: 0 8px;">/</span> 社区规范
+        </div>
+
+        <!-- 头部 -->
+        <div class="hero">
+            <div class="hero-icon"><span class="material-symbols-outlined">gavel</span></div>
+            <h1>hg 社区规范</h1>
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="search-box">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="搜索社区规则或发帖问题...">
+        </div>
+
+        <!-- 列表区 1 -->
+        <div class="section-block">
+            <div class="section-header">社区交流指南</div>
+            <div class="info-box">
+                为了让所有 hg 用户都能拥有愉快的交流体验，请务必遵守以下基础底线。违规账号将被限制发言或永久封禁。
+            </div>
+            <div class="link-list">
+                <a href="answer/general-rules/" class="link-item">社区基本发言规则与底线</a>
+                <a href="answer/forbidden/" class="link-item">严禁发布的内容（违禁/暴力/引战）</a>
+                <a href="answer/ad-policy/" class="link-item">关于广告、推广和外链的限制</a>
+                <a href="answer/report/" class="link-item">如何举报违规帖子和恶意用户？</a>
+            </div>
+        </div>
+
+        <!-- 列表区 2 -->
+        <div class="section-block">
+            <div class="section-header">发帖与互动</div>
+            <div class="link-list">
+                <a href="answer/create-post/" class="link-item">如何发布新帖子？（需要登录）</a>
+                <a href="answer/categories/" class="link-item">如何选择合适的标签分类（闲聊/求助/分享）？</a>
+                <a href="answer/edit-delete/" class="link-item">我可以修改或删除自己发过的帖子吗？</a>
+            </div>
+        </div>
+
+        <!-- 列表区 3 -->
+        <div class="section-block">
+            <div class="section-header">账号处罚与申诉</div>
+            <div class="link-list">
+                <a href="answer/ban-reason/" class="link-item">我被禁言或封号了，可能是什么原因？</a>
+                <a href="answer/appeal/" class="link-item">如何进行封禁申诉？（联系管理员）</a>
+                <a href="answer/data-privacy/" class="link-item">我的发帖数据会被公开展示吗？</a>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
