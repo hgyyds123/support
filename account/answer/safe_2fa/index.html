@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA 与安全性 · hg 帮助</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0; 
+            --primary: #0b57d0; 
+            --surface: #F8F9FA;
+            --warning-bg: #FFF7E0; --warning-border: #F5B400;
+        }
+        @media (prefers-color-scheme: dark) { 
+            :root { 
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746; 
+                --primary: #A8C7FA; 
+                --surface: #1E1F20;
+                --warning-bg: #3B2E00; --warning-border: #F5B400;
+            } 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        
+        /* 顶部导航 */
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+        
+        /* 主体内容 */
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+        
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+        
+        /* 列表样式 */
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+        
+        /* 卡片式链接框 */
+        .link-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: border-color 0.2s;
+        }
+        .link-card:hover { border-color: var(--primary); }
+        .link-card .icon { font-size: 32px; color: var(--primary); }
+        .link-card .content h3 { font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+        .link-card .content p { margin-bottom: 0; font-size: 15px; }
+
+        /* 警告提示框 */
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 24px 0;
+        }
+        .warning-box p { margin-bottom: 0; color: var(--text); font-size: 15px; font-weight: 500; }
+        
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <!-- 退回上一级目录 -->
+            <a href="../../"><span class="material-symbols-outlined">arrow_back</span> 返回安全与 2FA</a>
+        </div>
+    </header>
+    
+    <main class="container">
+        <h1>2FA 与 安全性</h1>
+
+        <p>2FA 是 Two-Factor Authentication 的缩写，中文叫 <strong>双因素认证</strong> 或 <strong>两步验证</strong>。</p>
+
+        <p>简单说，就是登录时除了输入密码，还要再提供一种额外的验证方式，常见的有：</p>
+        <ul>
+            <li>短信验证码</li>
+            <li>身份验证器 App（如 Google Authenticator、Microsoft Authenticator）生成的动态码</li>
+            <li>硬件安全密钥（如 YubiKey）</li>
+            <li>指纹 / 人脸识别</li>
+            <li>邮箱验证码</li>
+        </ul>
+
+        <p>它的核心逻辑是：<strong>密码（你知道的东西） + 第二因素（你拥有的东西或你本身的特征）</strong>。即使密码泄露，攻击者没有第二因素也很难登录。</p>
+
+        <h2>hg 网站支持的方式</h2>
+        
+        <!-- 警告提示框 -->
+        <div class="warning-box">
+            <p>⚠️ 请注意：hg 网站目前所支持的仅有 <strong>身份验证器 App</strong>（如 Google Authenticator、Microsoft Authenticator）生成的动态码。</p>
+        </div>
+
+        <p>您可以在 hg 账号中心里随时开启或关闭这一功能：</p>
+
+        <!-- 链接卡片 -->
+        <a href="https://hg1.dpdns.org/account" class="link-card">
+            <span class="material-symbols-outlined icon">security</span>
+            <div class="content">
+                <h3>前往 hg 账号中心设置 2FA</h3>
+                <p>hg1.dpdns.org/account</p>
+            </div>
+        </a>
+
+        <p>2FA 能显著降低账号被盗风险。目前，银行、邮箱、社交平台、企业系统等均已普遍支持双因素认证。强烈建议您开启！</p>
+
+    </main>
+</body>
+</html>
