@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什么是 hg 账号？ · hg 帮助</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0; 
+            --primary: #0b57d0; 
+            --green-bg: #188038; --green-hover: #11632a; 
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) { 
+            :root { 
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746; 
+                --primary: #A8C7FA; 
+                --green-bg: #0D652D; --green-hover: #084d21; 
+                --surface: #1E1F20;
+            } 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); }
+        a:hover { text-decoration: underline; }
+        
+        /* 顶部导航 */
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+        
+        /* 主体内容 */
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+        
+        /* 绿色注册按钮 */
+        .btn-register { 
+            display: inline-flex; align-items: center; justify-content: center;
+            background-color: var(--green-bg); color: #FFFFFF !important; 
+            padding: 12px 24px; border-radius: 8px; 
+            font-size: 16px; font-weight: 500; 
+            margin: 16px 0 32px 0; transition: background 0.2s; 
+        }
+        .btn-register:hover { background-color: var(--green-hover); text-decoration: none; }
+
+        /* 列表样式 */
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        
+        /* 高亮提示框 */
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <!-- 注意：这里返回上一级，退回到 support/account/ 目录 -->
+            <a href="../../"><span class="material-symbols-outlined">arrow_back</span> 返回账号帮助</a>
+        </div>
+    </header>
+    
+    <main class="container">
+        <h1>什么是 hg 账号？</h1>
+
+        <p>hg 账号堪称 hg 产品的通行证。您只需使用一组邮箱和密码（或通行密钥），便能登录大多数 hg 产品。借助 hg 账号，您可以跨设备获享个性化体验，充分发挥各项 hg 服务的最大潜能；还能掌控自己的数据。</p>
+
+        <p>只要登录账号，您即可畅享各种实用功能（比如自动填充）、实用推荐内容，随时随地轻松访问自己最重要的信息，以及执行其他操作。</p>
+
+        <p>在 hg 账号中，您不仅可以修改个人信息并控制其显示位置，还可以更新隐私设置和安全设置。</p>
+
+        <h2>确认您是否拥有 hg 账号</h2>
+        <p>如果尚无 hg 账号，您可以点击下方按钮创建一个。</p>
+
+        <!-- 绿色注册按钮，指向注册页（带 redirect 参数，注册完自动回首页） -->
+        <a href="/account/login/?redirect=/" class="btn-register">创建 hg 账号</a>
+
+        <h2>您的 hg 账号和所用的 hg 服务</h2>
+        <p>在使用诸如下方所列的 hg 服务时，您必须拥有 hg 账号才能保存数据：</p>
+
+        <ul>
+            <li><a href="/community/">社区</a></li>
+            <li><a href="/talkroom/">聊天室</a></li>
+            <li><a href="/account/">管理账号</a></li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>即便没有 hg 账号，您也能使用其他 hg 服务（如游戏中心、帮助文档），但登录账号后可获得更出色的体验。</p>
+        </div>
+
+        <p>例如，登录 hg 账号后，您可以：</p>
+        <ul>
+            <li>在社区发帖、点赞与分享</li>
+            <li>在聊天室召唤 AI 助手</li>
+            <li>同步您的 2FA 安全设置</li>
+        </ul>
+
+    </main>
+</body>
+</html>
