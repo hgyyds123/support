@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态验证码错误或丢失怎么办？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .notice {
+            background-color: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .notice p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回账号帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>动态验证码错误或丢失怎么办？</h1>
+
+        <p>动态验证码依据设备时间计算，一旦时间出现偏差，验证器生成的号码就会与服务器预期的不一致。这类问题最常见，也最容易解决。如果验证器本身丢了，请直接看后半部分。</p>
+
+        <div class="notice">
+            <p>先判断属于哪种情况：验证器还在但号码通不过 → 看「时间不同步」；验证器找不到或换机后没有记录 → 看「验证码丢失」。</p>
+        </div>
+
+        <h2>情况一：时间不同步导致验证失败</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>确认用的是当前号码</strong>：号码每 30 秒刷新一次，请等新一轮出现后立即输入。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>校准手机时间</strong>：进入系统设置，打开「自动确定日期和时间」，再关闭后重新打开一次以强制同步。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>检查时区</strong>：跨时区出行后容易出现偏移，请确认时区与所在地一致。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p><strong>确认输入格式</strong>：6 位半角数字，没有空格或全角字符。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p><strong>重新获取二维码</strong>：若反复失败，回到账号中心移除旧的验证器绑定，然后按 <a hhref="../../../safe_2fa/answer/scan-qr/">如何扫描二维码绑定验证器</a> 重新绑定。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>校准时间后仍然通不过，请确认验证器里添加的是当前账号对应的那条记录，而不是同名的其他条目。</p>
+        </div>
+
+        <h2>情况二：验证码丢失</h2>
+        <p>验证器绑定在具体的设备上，换手机、重装 App 或手机丢失后，旧设备上的号码无法继续使用。</p>
+
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>旧手机还在</strong>：在旧手机上使用验证器的「导出 / 迁移」功能生成迁移码，在新手机上导入即可，参考 <a hhref="../../../safe_2fa/answer/lost-device/">手机丢了/换手机了，收不到动态码怎么办？</a>。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>有备用恢复码</strong>：登录时选择「使用恢复码」入口，输入其中一个未使用的恢复码。每个恢复码只能用一次。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>两者都没有</strong>：无法自助绕过 2FA，需通过 <a hhref="../contact-admin/">联系管理员进行人工账号重置</a> 核实身份后解除绑定。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>恢复码等同于密码，请勿以截图形式长期存放在聊天软件或公开网盘中。</p>
+        </div>
+
+        <h2>找回后立即要做的事</h2>
+        <ul>
+            <li>重新绑定验证器，确认能正常生成动态码。</li>
+            <li>重新生成一组备用恢复码，替换旧的并离线保存。</li>
+            <li>修改一次密码，检查 <a hhref="../logout/">登录设备</a> 中是否有陌生条目。</li>
+        </ul>
+
+        <p>完整说明见 <a hhref="../../../safe_2fa/">安全与 2FA 帮助</a>，其中包括验证器 App 推荐与扫码绑定步骤。</p>
+    </main>
+</body>
+</html>

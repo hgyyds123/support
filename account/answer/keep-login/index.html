@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在手机 / 电脑上保持登录状态 · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回账号帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>在手机 / 电脑上保持登录状态</h1>
+
+        <p>hg 账号默认使用 Cookie 维持登录状态，只要没有主动退出、也没有清除站点数据，下次打开站点时通常仍是登录状态。</p>
+
+        <h2>让登录状态保持得更久</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>不要清除本站点的 Cookie</strong>：Cookie 是登录凭证，清除后需要重新登录。清理方法见 <a hhref="../../../internet/answer/clear-cache/">如何正确清除网页缓存与 Cookie？</a>。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>关闭浏览器的自动清理</strong>：部分隐私清理工具会在退出浏览器时清空 Cookie，建议把 hg 站点加入白名单。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>避免长期不用无痕窗口</strong>：无痕窗口关闭后即清除全部状态，不适合保持登录。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p><strong>在个人设备上使用</strong>：公用电脑或共享设备上，用完请主动退出。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>开启两步验证（2FA）后，即使登录状态失效，重新登录时仍需要动态码，请勿关闭它。</p>
+        </div>
+
+        <h2>总是提示需要重新登录</h2>
+        <ul>
+            <li><strong>浏览器设置了退出即清除数据</strong>：在浏览器隐私设置中关闭该行为，或将本站加入白名单。</li>
+            <li><strong>使用了隐私 / 清理类扩展</strong>：请暂时停用相关扩展后再试。</li>
+            <li><strong>无痕窗口</strong>：关闭后登录状态会消失，这是预期行为。</li>
+            <li><strong>账号被移除或安全策略生效</strong>：如怀疑设备被移除，参考 <a hhref="../logout/">退出登录或移除设备</a> 处理。</li>
+            <li><strong>页面跳转或白屏</strong>：见 <a hhref="../../../internet/answer/edge-loop/">Edge 浏览器无限跳转或白屏解决指南</a>。</li>
+        </ul>
+
+        <p>在公用设备上使用后，请记得 <a hhref="../logout/">退出登录</a>。</p>
+    </main>
+</body>
+</html>

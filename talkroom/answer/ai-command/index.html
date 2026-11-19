@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 唤醒词与指令大全 · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0 24px 0; font-size: 15px; }
+        th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; color: var(--text-sub); vertical-align: top; }
+        th { background-color: var(--surface); color: var(--text); font-weight: 500; }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 14px; background-color: var(--surface);
+            border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>AI 唤醒词与指令大全</h1>
+
+        <p>AI 助手只回应被明确召唤的消息。下面整理了召唤方式、常用指令与它们的效果，方便您按需选用。</p>
+
+        <div class="highlight-box">
+            <p>具体的唤醒词与指令以聊天室输入框附近的界面提示为准。如果页面显示与下表不同，请以界面为准。</p>
+        </div>
+
+        <h2>唤醒方式</h2>
+        <table>
+            <tr><th>方式</th><th>写法示例</th><th>说明</th></tr>
+            <tr>
+                <td>提及召唤</td>
+                <td><code>@AI</code> + 内容</td>
+                <td>在消息开头写出唤醒词，接着写您的需求。最常用的一种方式。</td>
+            </tr>
+            <tr>
+                <td>直接提问</td>
+                <td>以唤醒词开头的整句</td>
+                <td>把唤醒词作为句子开头，后面直接接问题，无需额外标点。</td>
+            </tr>
+            <tr>
+                <td>指令模式</td>
+                <td>唤醒词 + 指令名 + 参数</td>
+                <td>用于明确的任务型操作，例如总结、翻译、列清单。</td>
+            </tr>
+        </table>
+
+        <h2>常用指令</h2>
+        <table>
+            <tr><th>目的</th><th>示例写法</th><th>效果</th></tr>
+            <tr>
+                <td>总结</td>
+                <td><code>@AI 总结一下刚才的聊天</code></td>
+                <td>对最近的公开消息做要点归纳，便于快速回顾。</td>
+            </tr>
+            <tr>
+                <td>翻译</td>
+                <td><code>@AI 把下面这段翻译成英文：…</code></td>
+                <td>按指定语言互译，建议注明目标语言。</td>
+            </tr>
+            <tr>
+                <td>列清单</td>
+                <td><code>@AI 用列表列出 5 条建议</code></td>
+                <td>输出结构化条目，适合需要条理化整理的场景。</td>
+            </tr>
+            <tr>
+                <td>写代码</td>
+                <td><code>@AI 写一个 Python 函数…</code></td>
+                <td>给出代码片段，建议同时说明运行环境与输入输出。</td>
+            </tr>
+            <tr>
+                <td>解释概念</td>
+                <td><code>@AI 解释一下什么是 TOTP</code></td>
+                <td>用通俗语言解释术语，可要求控制篇幅。</td>
+            </tr>
+        </table>
+
+        <h2>让回答更符合预期</h2>
+        <ul>
+            <li><strong>说明输出形式</strong>：例如"用表格""不超过 100 字""给出代码和注释"。</li>
+            <li><strong>说明身份与用途</strong>：例如"面向新手""用于课堂讲解"，语气与深浅会随之调整。</li>
+            <li><strong>提供上下文</strong>：把相关背景写进同一条消息，比多轮追问更高效。</li>
+            <li><strong>一次只提一个需求</strong>：多个不相关的问题混在一起，回答容易顾此失彼。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>AI 回复可能存在错误或过时信息，不构成专业建议。涉及重要决策时请自行核实。</p>
+        </div>
+
+        <p>若 AI 一直没有回应，参考 <a hhref="../ai-errors/">AI 无响应或提示余额不足怎么办？</a>；若召唤后没有反应但页面卡顿，参考 <a hhref="../lag/">聊天室消息延迟或卡顿</a>。</p>
+    </main>
+</body>
+</html>

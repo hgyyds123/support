@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何解决手机时间不同步导致的验证失败？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回安全与 2FA</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>如何解决手机时间不同步导致的验证失败？</h1>
+
+        <p>动态验证码（TOTP）依据设备当前时间计算，因此手机与服务器的时间必须足够接近。差出几十秒，生成的号码就会完全不同，页面会提示验证码错误。</p>
+
+        <div class="highlight-box">
+            <p>只要把手机时间改为「自动获取网络时间」，绝大多数时间不同步问题都能立刻解决。</p>
+        </div>
+
+        <h2>手机上的设置方法</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>进入系统设置</strong>：打开「日期与时间」相关设置页面。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>打开自动确定</strong>：启用「自动确定日期和时间」（部分系统叫「使用网络提供的时间」）。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>强制同步一次</strong>：关闭该开关，等待数秒后重新打开，让系统重新校时。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p><strong>检查时区</strong>：确认时区与所在地一致。跨时区出行后容易出现偏差。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p><strong>重新获取验证码</strong>：等新一轮号码出现后，立即输入并提交。</p></div>
+        </div>
+
+        <h2>电脑端的检查</h2>
+        <p>如果您在电脑上操作（例如截图比对、或页面提示时间），也请确认电脑时间与手机一致。Windows 与 macOS 均可在「日期和时间」设置中开启自动同步。</p>
+
+        <div class="highlight-box">
+            <p>两端时间都自动同步后仍然失败，问题通常不在时间，而在记录或密钥，请参考 <a hhref="../totp-error/">为什么动态码会提示错误？</a>。</p>
+        </div>
+
+        <h2>仍未解决</h2>
+        <ul>
+            <li>时间已校准但依然提示错误：删除验证器中的旧记录，重新绑定一次，见 <a hhref="../scan-qr/">如何扫描二维码绑定验证器</a>。</li>
+            <li>手动输入的密钥可能漏字符：<a hhref="../manual-key/">如何手动输入密钥（备用方式）</a>。</li>
+            <li>临时应急：使用备用恢复码登录，参考 <a hhref="../lost-device/">手机丢了 / 换手机了，收不到动态码怎么办？</a>。</li>
+        </ul>
+    </main>
+</body>
+</html>

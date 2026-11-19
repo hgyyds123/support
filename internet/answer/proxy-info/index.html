@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什么是 Supabase 反向代理？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        /* 链路示意图 */
+        .chain { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; background-color: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin: 20px 0 24px 0; font-size: 15px; color: var(--text-sub); }
+        .chain .node { background-color: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; color: var(--text); }
+        .chain .arrow { color: var(--primary); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回网络与技术</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>什么是 Supabase 反向代理？</h1>
+
+        <p>hg 站点的账号、社区和聊天室数据存放在 Supabase 上。为了让访问更稳定、更快，站点在用户与 Supabase 之间加了一层反向代理，由它代为转发请求。</p>
+
+        <div class="chain">
+            <span class="node">您的浏览器</span>
+            <span class="arrow">→</span>
+            <span class="node">hg 反向代理</span>
+            <span class="arrow">→</span>
+            <span class="node">Supabase 服务</span>
+        </div>
+
+        <p>这层代理依托分布在全球的边缘网络（Wasmer）运行，目的是让国内访问也能以较短路径直连数据库与 AI 服务，而不必绕远路。</p>
+
+        <h2>反向代理做了什么</h2>
+        <ul>
+            <li><strong>统一入口</strong>：浏览器只需要连接 hg 域名，不必直接指向数据库地址，减少暴露面。</li>
+            <li><strong>转发与缓存</strong>：请求由代理转发到后端服务，部分静态与重复请求可被缓存，从而加快响应。</li>
+            <li><strong>缓冲与容错</strong>：后端短暂抖动时，代理可以先兜住请求，降低页面直接报错的概率。</li>
+            <li><strong>简化配置</strong>：更换后端地址时无需改动前端代码，对使用者完全透明。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>作为使用者，您不需要配置任何代理参数，正常使用即可。这一层完全由站点维护。</p>
+        </div>
+
+        <h2>代理出问题时会怎样</h2>
+        <p>如果代理链路不稳定，页面会表现出下面这些症状：</p>
+        <ul>
+            <li>提示「网络连接失败」或请求长时间无响应。</li>
+            <li>页面加载到一半停住，聊天室消息迟迟不刷新。</li>
+            <li>登录时提示 400 或 500，或频繁要求重新登录。</li>
+            <li>图片等资源加载缓慢或反复失败。</li>
+        </ul>
+
+        <p>遇到这些情况，请先按 <a hhref="../request-timeout/">网络连接失败或代理超时怎么办？</a> 排查，再参考 <a hhref="../error-400/">400 Bad Request 排查</a> 与 <a hhref="../error-500/">服务器内部错误 (500) 修复进度</a>。如果确认是代理链路问题，请通过 <a hhref="mailto:info@hg1.dpdns.org">邮件联系站长</a> 反馈出现时间。</p>
+
+        <h2>为什么聊天室看起来"慢半拍"</h2>
+        <p>聊天室并非通过长连接实时推送，而是在代理之后按一定间隔拉取新消息，因此会有轻微的延迟。关于这一点以及它带来的影响，见 <a hhref="../websocket/">为什么聊天室没有使用 WebSocket？</a>。</p>
+
+        <p>了解代理的作用后，遇到网络问题时就更容易判断问题出在哪一段链路上了。</p>
+    </main>
+</body>
+</html>

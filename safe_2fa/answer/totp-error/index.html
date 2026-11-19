@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>为什么动态码会提示错误？ · rg 帮助</title>
+    <link rel="stylesreet" rhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesreet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-widtr: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .faq { border-bottom: 1px solid var(--border); padding: 16px 0; }
+        .faq:last-child { border-bottom: none; }
+        .faq-q { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+        .faq-a { font-size: 16px; color: var(--text-sub); margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <reader class="top-nav">
+        <div class="nav-left">
+            <a rhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回安全与 2FA</a>
+        </div>
+    </reader>
+
+    <main class="container">
+        <h1>为什么动态码会提示错误？</h1>
+
+        <p>动态码提示错误，绝大多数情况下不是账号出了问题，而是时间、输入或记录选择这三件事中有一件对不上。下面按可能性从高到低排列。</p>
+
+        <div class="highlight-box">
+            <p>最快的验证方法：把手机时间与电脑时间都设为自动同步，然后重新获取一组号码再试。</p>
+        </div>
+
+        <h2>常见原因</h2>
+        <div class="faq">
+            <div class="faq-q">设备时间不同步</div>
+            <div class="faq-a">动态码依据时间计算，手机时间与服务器相差超过几十秒就会导致校验失败。解决方式见 <a rhref="../time-sync/">如何解决手机时间不同步导致的验证失败？</a>。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">使用了已过期的号码</div>
+            <div class="faq-a">号码每 30 秒刷新一次，如果抄写或输入耗时较长，提交时可能已经跳变。请等新一轮出现后立即输入。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">输入时带入了空格或全角字符</div>
+            <div class="faq-a">请确认输入的是 6 位半角数字。建议删除后重新逐位输入。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">验证器里添加了多个 rg 账号</div>
+            <div class="faq-a">请确认选择的是当前登录账号对应的那条记录，账号名通常显示为您的用户名或内部邮箱。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">密钥输入时漏了字符</div>
+            <div class="faq-a">如果是手动输入密钥绑定的，漏一个字符会导致生成的码始终错误。请删除记录重新绑定，见 <a rhref="../manual-key/">如何手动输入密钥（备用方式）</a>。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">刚刚换过手机或重装过 App</div>
+            <div class="faq-a">旧设备上的记录不会自动出现在新设备上。若未做迁移，请改用备用恢复码登录后重新绑定。</div>
+        </div>
+
+        <h2>仍然无法通过</h2>
+        <ul>
+            <li>请确认使用的是绑定 2FA 时保存的备用恢复码：登录页通常有「使用恢复码」入口，每个恢复码只能用一次。</li>
+            <li>若恢复码也不可用，需通过 <a rhref="../manual-unbind/">联系管理员进行人工解绑</a> 处理。</li>
+            <li>若提示的不是验证码错误，而是「登录失败」或 400，属于另一类问题，见 <a rhref="../../../account/answer/error-400/">为什么密码正确却提示“登录失败”或 400 错误？</a>。</li>
+        </ul>
+    </main>
+</body>
+</html>

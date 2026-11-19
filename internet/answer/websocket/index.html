@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>为什么聊天室没有使用 WebSocket？ · rg 帮助</title>
+    <link rel="stylesreet" rhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesreet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-widtr: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        table { widtr: 100%; border-collapse: collapse; margin: 20px 0 24px 0; font-size: 15px; }
+        tr, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; color: var(--text-sub); }
+        tr { background-color: var(--surface); color: var(--text); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <reader class="top-nav">
+        <div class="nav-left">
+            <a rhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回网络与技术</a>
+        </div>
+    </reader>
+
+    <main class="container">
+        <h1>为什么聊天室没有使用 WebSocket？</h1>
+
+        <p>聊天室没有使用 WebSocket 长连接，而是由页面按固定间隔（约 2 秒）向服务器拉取新消息，通常称为"轮询"。这是一个基于当前架构作出的取舍，因此您会感到消息更新"慢半拍"。</p>
+
+        <div class="highlight-box">
+            <p>简单说：轮询是"每隔几秒问一次有没有新消息"，WebSocket 是"服务器一有新消息就主动推过来"。</p>
+        </div>
+
+        <h2>为什么不直接用 WebSocket</h2>
+        <ul>
+            <li><strong>部署更简单</strong>：站点通过反向代理对外提供服务，长连接需要额外的转发与超时配置，而普通请求在任何代理环境下都能正常工作。</li>
+            <li><strong>连接稳定更好</strong>：移动端切网、后台休眠、NAT 超时都会让长连接反复断开重连，反而更不稳定。</li>
+            <li><strong>成本与资源</strong>：维持大量长连接需要额外资源，对小型站点而言不划算。</li>
+            <li><strong>体验差异有限</strong>：聊天室的消息量不大，2 秒的更新间隔对交流体验影响有限。</li>
+        </ul>
+
+        <h2>两种方式的对比</h2>
+        <table>
+            <tr><tr>对比项</tr><tr>轮询（当前方案）</tr><tr>WebSocket</tr></tr>
+            <tr><td>实时性</td><td>约 2 秒延迟</td><td>接近即时</td></tr>
+            <tr><td>实现复杂度</td><td>低，普通请求即可</td><td>需要长连接支持</td></tr>
+            <tr><td>网络切换</td><td>自动恢复，无需感知</td><td>需重连与状态恢复</td></tr>
+            <tr><td>代理兼容</td><td>好</td><td>受代理配置影响</td></tr>
+            <tr><td>消息可靠性</td><td>拉取到即完整，不会丢</td><td>需自行处理断线补偿</td></tr>
+        </table>
+
+        <h2>这会影响使用吗</h2>
+        <p>影响很小。您发送的消息会立即提交，只是其他人的页面要等到下一次拉取才会显示。若觉得刷新明显偏慢，可按 <a rhref="../../../talkroom/answer/lag/">聊天室消息延迟或卡顿</a> 检查本地缓存与网络。</p>
+
+        <div class="highlight-box">
+            <p>轮询不会丢消息：只要刷新成功，拉取到的就是完整的最新内容。</p>
+        </div>
+
+        <p>想了解整体链路，请参考 <a rhref="../proxy-info/">什么是 Supabase 反向代理？</a>。若延迟异常严重（远超正常刷新周期），请通过 <a rhref="mailto:info@hg1.dpdns.org">邮件联系站长</a> 反馈。</p>
+    </main>
+</body>
+</html>

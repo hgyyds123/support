@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何发送一对一私信？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        .faq { border-bottom: 1px solid var(--border); padding: 16px 0; }
+        .faq:last-child { border-bottom: none; }
+        .faq-q { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+        .faq-a { font-size: 16px; color: var(--text-sub); margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>如何发送一对一私信？</h1>
+
+        <p>当您只想和某一位成员单独交流、不想在公共聊天室里刷屏时，可以使用一对一私信。私信内容只有对话双方可见，其他成员无法查看。</p>
+
+        <div class="highlight-box">
+            <p>私信与公共聊天室一样需要登录。未登录状态下无法发起私信。</p>
+        </div>
+
+        <h2>发送步骤</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>进入聊天室后，在成员列表中找到目标用户，点击其头像或名字。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>在弹出的菜单中选择「发私信」或点击消息图标。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>聊天窗口切换为两人对话视图，在输入框中键入内容并发送。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p>对话会保留在私信列表中，之后可以直接从列表进入继续聊。</p></div>
+        </div>
+
+        <h2>一些实用说明</h2>
+        <ul>
+            <li><strong>找不到对方</strong>：请确认对方当前在聊天室中。离线成员可能无法立即收到私信，消息会保留到对方上线。</li>
+            <li><strong>对方不在线</strong>：私信不要求双方同时在线，发送后对方下次进入时能看到。</li>
+            <li><strong>想结束对话</strong>：在私信列表中关闭该会话即可，对方不会收到任何提示。</li>
+            <li><strong>不想被陌生人打扰</strong>：请在账号中心调整隐私设置。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>私信同样受社区规范约束。发送骚扰、广告或违禁内容，会被直接处理，申诉方式见 <a hhref="../../../community/answer/appeal/">如何进行封禁申诉？</a>。</p>
+        </div>
+
+        <h2>常见问题</h2>
+        <div class="faq">
+            <div class="faq-q">点对方头像没有「发私信」选项</div>
+            <div class="faq-a">可能是对方设置了不允许陌生人私信，或您尚未登录。请先确认登录状态。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">消息发出后对方说没收到</div>
+            <div class="faq-a">多为消息延迟，参考 <a hhref="../lag/">聊天室消息延迟或卡顿</a>；也可让对方重新加载页面。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">误发消息能撤回吗</div>
+            <div class="faq-a">请以实际页面上的提示为准。若尚未支持撤回，请及时说明情况并致歉。</div>
+        </div>
+
+        <p>如果您只是想在公共讨论中提问，参考 <a hhref="../public-chat/">公共聊天室使用指南</a> 更合适。</p>
+    </main>
+</body>
+</html>

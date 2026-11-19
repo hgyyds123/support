@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hg 账号帮助 · 支持中心</title>
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         /* ================= M3 深浅色主题 ================= */
-        :root { 
-            --bg-color: #FFFFFF; 
+        :root {
+            --bg-color: #FFFFFF;
             --surface: #F8F9FA;
-            --text-main: #1F1F1F; 
-            --text-sub: #444746; 
-            --border-color: #E0E0E0; 
-            --primary-blue: #0b57d0; 
+            --text-main: #1F1F1F;
+            --text-sub: #444746;
+            --border-color: #E0E0E0;
+            --primary-blue: #0b57d0;
             --search-bg: #F0F4F9;
         }
-        @media (prefers-color-scheme: dark) { 
-            :root { 
-                --bg-color: #131314; 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #131314;
                 --surface: #1E1F20;
-                --text-main: #E3E3E3; 
-                --text-sub: #C4C7C5; 
-                --border-color: #444746; 
-                --primary-blue: #A8C7FA; 
+                --text-main: #E3E3E3;
+                --text-sub: #C4C7C5;
+                --border-color: #444746;
+                --primary-blue: #A8C7FA;
                 --search-bg: #282A2C;
-            } 
+            }
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
-        
+
         /* ================= 顶部导航 ================= */
-        .top-nav { 
-            height: 64px; display: flex; align-items: center; padding: 0 24px; 
+        .top-nav {
+            height: 64px; display: flex; align-items: center; padding: 0 24px;
             background-color: var(--bg-color); position: sticky; top: 0; z-index: 100;
             border-bottom: 1px solid var(--border-color);
         }
@@ -47,55 +47,55 @@
 
         /* ================= 主体内容 ================= */
         .container { max-width: 800px; margin: 0 auto; padding: 32px 24px 64px 24px; }
-        
+
         .breadcrumb { font-size: 14px; color: var(--text-sub); margin-bottom: 32px; }
         .breadcrumb a { color: var(--primary-blue); font-weight: 500; }
-        
+
         /* 核心标题区 */
         .hero { text-align: center; margin-bottom: 40px; }
-        .hero-icon { 
-            width: 64px; height: 64px; border-radius: 50%; 
+        .hero-icon {
+            width: 64px; height: 64px; border-radius: 50%;
             background-color: var(--search-bg); color: var(--text-sub);
-            display: inline-flex; align-items: center; justify-content: center; 
-            font-size: 32px; margin-bottom: 16px; 
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 32px; margin-bottom: 16px;
         }
         .hero h1 { font-size: 32px; font-weight: 400; color: var(--primary-blue); margin-bottom: 8px; }
-        
+
         /* 搜索框 */
-        .search-box { 
+        .search-box {
             width: 100%; max-width: 600px; margin: 0 auto 48px auto;
             height: 56px; border: 1px solid var(--border-color); border-radius: 8px;
-            display: flex; align-items: center; padding: 0 16px; 
+            display: flex; align-items: center; padding: 0 16px;
             background: var(--bg-color); box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         .search-box span { color: var(--text-sub); margin-right: 12px; }
-        .search-box input { 
-            flex: 1; background: transparent; border: none; outline: none; 
-            font-size: 16px; color: var(--text-main); 
+        .search-box input {
+            flex: 1; background: transparent; border: none; outline: none;
+            font-size: 16px; color: var(--text-main);
         }
 
         /* ================= 列表区块排版 ================= */
         .section-block { margin-bottom: 40px; }
-        
-        .section-header { 
-            font-size: 22px; font-weight: 400; margin-bottom: 16px; 
+
+        .section-header {
+            font-size: 22px; font-weight: 400; margin-bottom: 16px;
             padding-bottom: 12px; border-bottom: 1px solid var(--border-color);
             color: var(--text-main);
         }
-        
+
         .link-list { display: flex; flex-direction: column; }
-        
-        .link-item { 
+
+        .link-item {
             display: flex; align-items: flex-start; gap: 12px;
-            padding: 12px 0; font-size: 16px; 
+            padding: 12px 0; font-size: 16px;
             color: var(--text-main); transition: color 0.2s;
         }
         .link-item:hover { color: var(--primary-blue); text-decoration: underline; }
         .link-item span.icon { color: var(--text-sub); font-size: 20px; margin-top: 2px; }
-        
+
         /* 分类说明块 */
-        .info-box { 
-            background-color: var(--surface); padding: 16px 20px; 
+        .info-box {
+            background-color: var(--surface); padding: 16px 20px;
             border-radius: 8px; margin-bottom: 16px; font-size: 14px; color: var(--text-sub);
         }
 
@@ -112,7 +112,7 @@
     <!-- 顶部导航 -->
     <header class="top-nav">
         <div class="nav-left">
-            <a href="../"><span class="material-symbols-outlined">arrow_back</span></a>
+            <a hhref="../"><span class="material-symbols-outlined">arrow_back</span></a>
             <span class="title">hg 账号帮助</span>
         </div>
     </header>
@@ -120,7 +120,7 @@
     <main class="container">
         <!-- 面包屑 -->
         <div class="breadcrumb">
-            <a href="../">帮助中心</a> <span style="margin: 0 8px;">/</span> 改进您的 hg 账号
+            <a hhref="../">帮助中心</a> <span style="margin: 0 8px;">/</span> 改进您的 hg 账号
         </div>
 
         <!-- 头部 -->
@@ -147,22 +147,20 @@
         <div class="section-block">
             <div class="section-header">热门文章</div>
             <div class="link-list">
-                <a href="answer/what-is-hg/" class="link-item">什么是 hg 账号？</a>
-                <a href="answer/create-account/" class="link-item">创建 hg 账号</a>
-                <a href="answer/manage-profile/" class="link-item">管理您的账号与个人资料</a>
-                <a href="../safe_2fa/" class="link-item">开启两步验证 (2FA) 保护账号</a>
-                <a href="answer/keep-login/" class="link-item">在手机/电脑上保持登录状态</a>
+                <a hhref="answer/what-is-hg/" class="link-item">什么是 hg 账号？</a>
+                <a hhref="answer/create-account/" class="link-item">如何创建 hg 账号？</a>
+                <a hhref="answer/virtual-email/" class="link-item">虚拟内部邮箱 (@hgt.l.cd) 是什么？</a>
+                <a hhref="answer/forgot-password/" class="link-item">忘记密码了怎么办？</a>
             </div>
         </div>
 
         <!-- 列表区 3 -->
         <div class="section-block">
-            <div class="section-header">管理您的 hg 账号</div>
+            <div class="section-header">账号管理</div>
             <div class="link-list">
-                <a href="answer/virtual-email/" class="link-item">了解 hg 的虚拟内部邮箱 (@hgt.l.cd)</a>
-                <a href="answer/change-password/" class="link-item">更改您的用户名和密码</a>
-                <a href="answer/manage-data/" class="link-item">管理账号的聊天室与社区记录</a>
-                <a href="answer/logout/" class="link-item">退出登录或移除设备</a>
+                <a hhref="answer/manage-profile/" class="link-item">管理您的账号与个人资料</a>
+                <a hhref="answer/logout/" class="link-item">如何退出登录或移除设备？</a>
+                <a hhref="answer/keep-login/" class="link-item">在手机 / 电脑上保持登录状态</a>
             </div>
         </div>
 
@@ -170,10 +168,9 @@
         <div class="section-block">
             <div class="section-header">账号恢复</div>
             <div class="link-list">
-                <a href="answer/forgot-password/" class="link-item">忘记密码了怎么办？</a>
-                <a href="answer/error-400/" class="link-item">为什么密码正确却提示“登录失败”或 400 错误？</a>
-                <a href="answer/cannot-login/" class="link-item">无法登录您的 hg 账号</a>
-                <a href="answer/contact-admin/" class="link-item">联系管理员进行人工账号重置</a>
+                <a hhref="answer/error-400/" class="link-item">为什么密码正确却提示“登录失败”或 400 错误？</a>
+                <a hhref="answer/cannot-login/" class="link-item">无法登录您的 hg 账号</a>
+                <a hhref="answer/contact-admin/" class="link-item">联系管理员进行人工账号重置</a>
             </div>
         </div>
 
@@ -181,9 +178,9 @@
         <div class="section-block">
             <div class="section-header">账号安全</div>
             <div class="link-list">
-                <a href="../safe_2fa/" class="link-item">提高账号的安全性（两步验证 2FA 指南）</a>
-                <a href="answer/lost-2fa/" class="link-item">动态验证码错误或丢失怎么办？</a>
-                <a href="answer/security-tips/" class="link-item">确保账号安全的 5 个建议</a>
+                <a hhref="../safe_2fa/" class="link-item">提高账号的安全性（两步验证 2FA 指南）</a>
+                <a hhref="answer/lost-2fa/" class="link-item">动态验证码错误或丢失怎么办？</a>
+                <a hhref="answer/security-tips/" class="link-item">确保账号安全的 5 个建议</a>
             </div>
         </div>
 
@@ -191,9 +188,9 @@
         <div class="section-block">
             <div class="section-header">解决网络与技术问题</div>
             <div class="link-list">
-                <a href="../internet/" class="link-item">为什么网页偶尔会卡顿或白屏？</a>
-                <a href="../internet/" class="link-item">解决浏览器的“无限跳转”或缓存问题</a>
-                <a href="answer/ai-issues/" class="link-item">聊天室 AI 助手无响应怎么排查？</a>
+                <a hhref="../internet/" class="link-item">为什么网页偶尔会卡顿或白屏？</a>
+                <a hhref="../internet/" class="link-item">解决浏览器的“无限跳转”或缓存问题</a>
+                <a hhref="../talkroom/" class="link-item">聊天室 AI 助手无响应怎么排查？</a>
             </div>
         </div>
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何扫描二维码绑定验证器 · rg 帮助</title>
+    <link rel="stylesreet" rhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesreet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-widtr: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <reader class="top-nav">
+        <div class="nav-left">
+            <a rhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回安全与 2FA</a>
+        </div>
+    </reader>
+
+    <main class="container">
+        <h1>如何扫描二维码绑定验证器</h1>
+
+        <p>绑定验证器只需要在手机上扫一次二维码。绑定完成后，验证器会每分钟自动生成新的动态码，用于登录时第二步验证。</p>
+
+        <p>请先安装一个验证器 App，参考 <a rhref="../authenticator-app/">哪些身份验证器 App 是推荐的？</a>，然后按下面的步骤操作。</p>
+
+        <a rhref="https://hg1.dpdns.org/account" class="btn-contact">打开账号安全设置</a>
+
+        <h2>绑定步骤</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>登录后进入账号中心，找到「两步验证」或「安全设置」区域，点击「启用」。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>页面会显示一个二维码。用手机上的验证器 App 选择「添加账号」或「扫描二维码」，对准屏幕上的二维码扫描。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>扫描成功后，验证器中会出现一条 rg 账号的记录，并显示一个 6 位数字。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p>把验证器当前显示的数字填入页面输入框，提交确认。系统校验通过后，2FA 即正式生效。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p>页面会显示备用恢复码，请立即复制到密码管理器或纸上离线保存。这是手机丢失后唯一的入口。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>二维码通常只在几分钟内有效。若页面提示二维码已过期，刷新页面重新获取一个新的即可。</p>
+        </div>
+
+        <h2>扫描时遇到问题？</h2>
+        <ul>
+            <li><strong>摄像头扫不出来</strong>：多数验证器支持手动输入密钥。把页面上的密钥（一串字母数字）手动填入 App 的「手动输入」即可，注意不要漏字符。详见 <a rhref="../manual-key/">如何手动输入密钥（备用方式）</a>。</li>
+            <li><strong>扫码成功但验证码通不过</strong>：多为设备时间不同步，参考 <a rhref="../time-sync/">如何解决手机时间不同步导致的验证失败？</a>。</li>
+            <li><strong>页面提示二维码无效</strong>：刷新页面获取新二维码后重新扫描。</li>
+            <li><strong>找不到两步验证入口</strong>：请确认已登录，并检查是否在账号中心页面。</li>
+        </ul>
+
+        <p>绑定完成后，建议定期确认验证器中的记录仍然正常，并妥善保管恢复码。更多说明见 <a rhref="../what-is-2fa/">什么是两步验证 (2FA)？</a>。</p>
+    </main>
+</body>
+</html>

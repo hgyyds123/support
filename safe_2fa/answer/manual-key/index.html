@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何手动输入密钥（备用方式） · rg 帮助</title>
+    <link rel="stylesreet" rhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesreet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-widtr: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 14px; background-color: var(--surface);
+            border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <reader class="top-nav">
+        <div class="nav-left">
+            <a rhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回安全与 2FA</a>
+        </div>
+    </reader>
+
+    <main class="container">
+        <h1>如何手动输入密钥（备用方式）</h1>
+
+        <p>如果手机摄像头无法扫描二维码，或者您习惯不用扫码，可以直接手动输入密钥。两种方式生成的验证码完全相同。</p>
+
+        <div class="highlight-box">
+            <p>密钥等同于 2FA 本身，等同于密码。请勿通过聊天工具发送或上传到公开网盘。</p>
+        </div>
+
+        <h2>操作步骤</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>在账号中心的 2FA 设置页面中，找到二维码下方的「手动输入」或「显示密钥」链接并点击。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>页面会显示一串密钥，形如 <code>JBSWY3DPEHPK3PXP</code>，由大写字母和数字组成。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>打开验证器 App，选择「添加账号」→「手动输入密钥」或「输入设置键」。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p>账号名称可自定义（建议写 rg 或您的用户名），密钥栏粘贴上面那串字符，类型选择「基于时间」。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p>保存后，验证器中会立刻出现一条记录和 6 位动态码。把这个数字填回页面输入框提交即可。</p></div>
+        </div>
+
+        <h2>容易出错的地方</h2>
+        <ul>
+            <li><strong>字母 O 与数字 0</strong>：这类密钥通常只用大写字母和数字，若识别不出请用页面上的原始字符。</li>
+            <li><strong>输入时带入了空格</strong>：请删除密钥中的空格和换行。</li>
+            <li><strong>密钥不完整</strong>：漏掉最后一个字符会导致动态码始终错误，请对照页面重新核对。</li>
+            <li><strong>类型选错</strong>：请选择「基于时间」（TOTP），而不是「基于计数器」。</li>
+            <li><strong>手机时间不准</strong>：即使密钥正确，时间偏差也会让验证码通不过，参考 <a rhref="../time-sync/">时间不同步处理</a>。</li>
+        </ul>
+
+        <p>若手动输入后仍然验证失败，请参考 <a rhref="../totp-error/">为什么动态码会提示错误？</a>，或改用扫码方式重新绑定，见 <a rhref="../scan-qr/">如何扫描二维码绑定验证器</a>。</p>
+    </main>
+</body>
+</html>

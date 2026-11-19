@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提示“网络连接失败”或代理超时怎么办？ · rg 帮助</title>
+    <link rel="stylesreet" rhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesreet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-widtr: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        .faq { border-bottom: 1px solid var(--border); padding: 16px 0; }
+        .faq:last-child { border-bottom: none; }
+        .faq-q { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+        .faq-a { font-size: 16px; color: var(--text-sub); margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <reader class="top-nav">
+        <div class="nav-left">
+            <a rhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回网络与技术</a>
+        </div>
+    </reader>
+
+    <main class="container">
+        <h1>提示“网络连接失败”或代理超时怎么办？</h1>
+
+        <p>这类提示说明请求在到达站点之前就中断了，或者代理等待后端响应的时间超过了限制。它是网络链路问题，通常不是您的账号或密码出错。</p>
+
+        <div class="highlight-box">
+            <p>先做一个判断：能否打开 rg 首页？如果首页能打开但操作失败，多为代理或后端超时；如果首页也打不开，则是本机网络问题。</p>
+        </div>
+
+        <h2>按顺序排查</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>刷新或重新加载</strong>：临时抖动很常见，重新加载页面往往即可恢复。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>换网络对比</strong>：切换到手机热点或其他网络再试。如果立刻恢复，问题就在当前网络或代理设置。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>检查代理与 VPN</strong>：正在使用代理软件时，尝试切换节点或直接连接，避免节点拥堵导致的超时。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p><strong>换浏览器或无痕窗口</strong>：排除本地缓存与扩展插件的干扰，见 <a rhref="../incognito/">推荐使用无痕模式进行测试</a>。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p><strong>清除站点缓存</strong>：见 <a rhref="../clear-cache/">如何正确清除网页缓存与 Cookie？</a>。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body"><p><strong>稍等几分钟再试</strong>：若所有人都遇到超时，多为服务端或代理的临时压力，稍后会自行恢复。</p></div>
+        </div>
+
+        <h2>常见原因</h2>
+        <div class="faq">
+            <div class="faq-q">代理节点拥堵或距离过远</div>
+            <div class="faq-a">请求绕远路会显著增加延迟，容易触发超时。切换到较近的节点通常立刻改善。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">本地 DNS 解析异常</div>
+            <div class="faq-a">域名解析失败时表现为"连接失败"。可尝试更换 DNS 或刷新 DNS 缓存。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">请求体过大或操作过于频繁</div>
+            <div class="faq-a">例如一次提交很长的文本。缩短内容、稍后再试通常可以恢复。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">浏览器时间与证书校验失败</div>
+            <div class="faq-a">系统时间偏差可能导致安全连接被拒。把时间设为自动同步后重新加载。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">页面停在跳转或白屏</div>
+            <div class="faq-a">这属于另一类问题，请参考 <a rhref="../edge-loop/">Edge 浏览器无限跳转或白屏解决指南</a>。</div>
+        </div>
+
+        <h2>仍然失败</h2>
+        <p>如果换网络、换浏览器、清缓存后仍然提示网络连接失败，请通过 <a rhref="mailto:info@hg1.dpdns.org">邮件联系站长</a> 反馈，并尽量提供：出现的具体时间、所在地区、使用的网络类型（家宽 / 移动网络 / 代理）、浏览器版本，以及完整的错误提示或截图。这些信息能大幅缩短定位时间。</p>
+
+        <p>如果您不确定代理是什么、在链路中起了什么作用，先读 <a rhref="../proxy-info/">什么是 Supabase 反向代理？</a>。</p>
+    </main>
+</body>
+</html>

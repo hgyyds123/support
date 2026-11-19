@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>听不到新消息提示音 · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        .faq { border-bottom: 1px solid var(--border); padding: 16px 0; }
+        .faq:last-child { border-bottom: none; }
+        .faq-q { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+        .faq-a { font-size: 16px; color: var(--text-sub); margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>听不到新消息提示音</h1>
+
+        <p>提示音依赖浏览器的自动播放策略。多数情况下，浏览器会因为"用户未与页面交互"而拦截声音，这不是聊天室的故障。</p>
+
+        <div class="highlight-box">
+            <p>最快的方法：在页面任意位置点击一下（例如输入框或空白处），然后再等一条新消息，通常提示音就会恢复。</p>
+        </div>
+
+        <h2>按顺序检查</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>确认页面处于活动状态</strong>：浏览器会限制后台标签页播放声音。请切到聊天室标签页，并在页面上点击一次。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>检查系统与浏览器静音</strong>：确认设备没有静音、标签页没有被单独静音（标签页右键菜单中有「取消静音网站」）。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>检查音量与输出设备</strong>：确认音量不为零，且输出设备选择正确（例如未连接到未使用的蓝牙耳机）。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p><strong>刷新页面</strong>：页面长时间未刷新可能导致音频状态异常，刷新后重新登录即可。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p><strong>检查扩展</strong>：部分广告拦截或隐私扩展会拦截音频资源，请暂时停用后再试。</p></div>
+        </div>
+
+        <h2>常见问题</h2>
+        <div class="faq">
+            <div class="faq-q">所有声音都听不到</div>
+            <div class="faq-a">这不是聊天室的问题。请先在系统设置中确认输出设备与音量，再检查其他网站是否有声音。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">只有提示音没有，消息正常显示</div>
+            <div class="faq-a">多为自动播放策略拦截。在页面上点击一次即可解除，若无效则刷新页面。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">手机浏览器上完全没有提示音</div>
+            <div class="faq-a">部分移动端浏览器出于省电限制后台音频，属正常现象。请保持页面在前台使用。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">页面本来正常，某次更新后失效</div>
+            <div class="faq-a">请确认浏览器版本是否过旧，并尝试清除本站点的缓存与 Cookie，见 <a hhref="../../../internet/answer/clear-cache/">如何正确清除网页缓存与 Cookie？</a>。</div>
+        </div>
+
+        <div class="highlight-box">
+            <p>提示音不影响消息接收。即使没有声音，消息仍会正常显示在聊天窗口中。</p>
+        </div>
+
+        <p>若同时存在消息延迟或页面卡顿，请参考 <a hhref="../lag/">聊天室消息延迟或卡顿</a>。若页面无法打开或白屏，见 <a hhref="../refresh-loop/">进入大厅后无限跳转或白屏</a>。</p>
+    </main>
+</body>
+</html>

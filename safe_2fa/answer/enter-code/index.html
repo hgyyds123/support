@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录时如何输入 6 位动态码？ · rg 帮助</title>
+    <link rel="stylesreet" rhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesreet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-widtr: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <reader class="top-nav">
+        <div class="nav-left">
+            <a rhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回安全与 2FA</a>
+        </div>
+    </reader>
+
+    <main class="container">
+        <h1>登录时如何输入 6 位动态码？</h1>
+
+        <p>开启 2FA 后，登录流程会在密码之后多一步验证码。整个过程通常只需要几秒钟。</p>
+
+        <h2>登录步骤</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>输入邮箱与密码</strong>：在登录页正常填写账号信息并提交。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>打开验证器 App</strong>：在手机上找到 rg 账号对应的那条记录。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>抄写当前数字</strong>：记下当前显示的 6 位数字，注意它每 30 秒会刷新一次。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p><strong>回填并提交</strong>：把数字填进页面的验证码输入框，立即提交。页面加载完成即登录成功。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>请在号码刷新后立即提交。如果输入到一半号码跳变了，请改用新一轮的数字重新填写。</p>
+        </div>
+
+        <h2>输入时的小提醒</h2>
+        <ul>
+            <li><strong>确认是 6 位</strong>：没有空格、没有多余的 0，全角字符也要避免。</li>
+            <li><strong>不要重复提交同一组数字</strong>：同一组码通常只能用一次，用过即失效。</li>
+            <li><strong>验证码错误会提示</strong>：若提示错误，先重新获取新的一组，再确认手机时间是否准确。</li>
+            <li><strong>忘记验证器在哪</strong>：请检查是否卸载过 App，或是否更换了手机。</li>
+        </ul>
+
+        <h2>提示验证码错误</h2>
+        <p>最常见的原因是设备时间不同步。请参考 <a rhref="../time-sync/">如何解决手机时间不同步导致的验证失败？</a> 与 <a rhref="../totp-error/">为什么动态码会提示错误？</a>。若验证器本身已丢失，请见 <a rhref="../lost-device/">手机丢了 / 换手机了，收不到动态码怎么办？</a>。</p>
+
+        <p>若登录时提示的不是验证码错误，而是「登录失败」或 400，请参考 <a rhref="../../../account/answer/error-400/">为什么密码正确却提示“登录失败”或 400 错误？</a>。</p>
+    </main>
+</body>
+</html>

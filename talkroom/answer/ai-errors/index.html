@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 无响应或提示余额不足怎么办？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .faq { border-bottom: 1px solid var(--border); padding: 16px 0; }
+        .faq:last-child { border-bottom: none; }
+        .faq-q { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+        .faq-a { font-size: 16px; color: var(--text-sub); margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>AI 无响应或提示余额不足怎么办？</h1>
+
+        <p>AI 助手依赖第三方模型服务，遇到服务波动、请求过于频繁或额度用尽时，都会表现为无响应或直接提示失败。下面按提示内容区分处理。</p>
+
+        <div class="highlight-box">
+            <p>先判断是所有人都无响应，还是只有您自己。若房间里其他人也召唤不出，多为服务端或额度问题，请等待恢复。</p>
+        </div>
+
+        <h2>按提示分类处理</h2>
+
+        <div class="faq">
+            <div class="faq-q">完全没有回应</div>
+            <div class="faq-a">可能是唤醒词写法不对，或消息被当作普通聊天忽略了。请对照 <a hhref="../ai-command/">AI 唤醒词与指令大全</a> 确认写法，并确保唤醒词在消息开头。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">提示额度不足 / 余额不足</div>
+            <div class="faq-a">说明当前 AI 服务的可用额度已用尽。这属于服务端情况，普通用户无法自助解决，请稍后再试。若长期如此，可通过 <a hhref="mailto:info@hg1.dpdns.org">邮件联系站长</a> 反馈。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">提示请求过于频繁</div>
+            <div class="faq-a">短时间内发送了过多召唤请求。请等待几十秒后再试，并尽量把多个问题合并到一条消息里。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">回复到一半中断</div>
+            <div class="faq-a">多为网络抖动或生成超时。请重新召唤一次，并把问题适当精简。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">图片生成失败</div>
+            <div class="faq-a">若提示无法生成图片，请调整提示词后重试，避免涉及敏感题材。图片已生成但显示不出来属于另一类问题，见 <a hhref="../../../internet/answer/img-blocked/">AI 生成的图片无法显示怎么办？</a>。</div>
+        </div>
+
+        <h2>自助排查顺序</h2>
+        <ul>
+            <li><strong>刷新页面</strong>：页面状态异常会让新消息发不出去。</li>
+            <li><strong>换无痕窗口</strong>：排除扩展与本地缓存的干扰。</li>
+            <li><strong>确认登录状态</strong>：未登录时部分功能不可用。</li>
+            <li><strong>精简提示词</strong>：过长或过于复杂的问题更容易超时。</li>
+            <li><strong>换个时间再试</strong>：若为他人普遍遇到，多为临时压力。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>AI 功能依赖第三方服务，可用性可能随时变化。若长期无法使用，请通过邮件反馈具体时间与现象。</p>
+        </div>
+
+        <p>若页面同时出现卡顿或消息延迟，请参考 <a hhref="../lag/">聊天室消息延迟或卡顿</a>。召唤方式本身的问题，见 <a hhref="../ai-trigger/">如何在聊天室召唤 AI？</a>。</p>
+    </main>
+</body>
+</html>

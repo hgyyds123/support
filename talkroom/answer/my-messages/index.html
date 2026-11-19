@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查看我的历史消息记录 · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 14px; background-color: var(--surface);
+            border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>查看我的历史消息记录</h1>
+
+        <p>聊天室中的消息按时间顺序保留，您可以用几种方式找回自己发过的内容。这些方法都不需要额外权限，只要登录即可。</p>
+
+        <h2>方法一：在聊天室里向上翻查</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>进入聊天室后，在消息区域向上滚动。越往上滚动，加载的历史消息越早。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>在消息列表中寻找显示着自己头像与名字的条目，这些就是您发送的内容。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>页面顶部通常显示当前已加载的最早时间，可据此判断还需要继续向上加载多少。</p></div>
+        </div>
+
+        <h2>方法二：从个人主页查看</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>点击自己的头像进入个人主页。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>在主页中查找发言记录或最近活动的区域。若该区域为空，说明您还没有在聊天室中发过消息。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>若您主要发布的是帖子而非聊天消息，请转到 <a hhref="../../../community/">社区</a> 的个人主页查看。</p></div>
+        </div>
+
+        <h2>方法三：用浏览器查找功能</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>在聊天室页面按 <code>Ctrl+F</code>（macOS 为 <code>Cmd+F</code>）。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>输入您记得的部分关键词，浏览器会在当前已加载的消息中高亮匹配项。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>若找不到，说明那条消息尚未加载，请先向上滚动加载更多历史。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>浏览器查找只搜索当前页面已加载的内容，因此"找不到"往往意味着需要继续向上滚动，而不是消息不存在。</p>
+        </div>
+
+        <h2>找不到消息的可能原因</h2>
+        <ul>
+            <li><strong>消息被删除或撤回</strong>：管理员或您本人删除的内容不会出现在历史中。</li>
+            <li><strong>记错了发言的房间</strong>：公共聊天室按房间分开，请确认在正确的房间中查找。</li>
+            <li><strong>是私信而非公开消息</strong>：私信只保留在私信会话中，参考 <a hhref="../private-chat/">如何发送一对一私信？</a>。</li>
+            <li><strong>发送时未成功</strong>：网络问题可能导致消息未发出，参考 <a hhref="../lag/">聊天室消息延迟或卡顿</a>。</li>
+            <li><strong>页面加载不完整</strong>：清除缓存后重新进入，见 <a hhref="../../../internet/answer/clear-cache/">如何正确清除网页缓存与 Cookie？</a>。</li>
+        </ul>
+
+        <p>如果您认为自己的历史消息缺失异常，请通过 <a hhref="mailto:info@hg1.dpdns.org">邮件联系站长</a> 反馈，说明账号与大致时间，便于核查。</p>
+    </main>
+</body>
+</html>

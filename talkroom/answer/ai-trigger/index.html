@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何在聊天室召唤 AI？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        .example { background-color: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+        .example code { border: none; background: none; padding: 0; font-size: 15px; color: var(--text); }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 14px; background-color: var(--surface);
+            border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>如何在聊天室召唤 AI？</h1>
+
+        <p>聊天室里有一位 AI 助手，可以回答问题、整理思路、翻译或帮忙起草内容。它只在被明确召唤时才会回应，不会随意插话。</p>
+
+        <h2>召唤方法</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>在公共聊天室的输入框中，先输入召唤前缀（以聊天室界面上的提示为准）。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>接着写上您的问题或需求，例如：</p></div>
+        </div>
+
+        <div class="example">
+            <code>@AI 用三句话总结一下刚才聊的内容</code>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>发送后稍等片刻，AI 的回复会出现在消息流中，并带有明显的标识以区分真人发言。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>一次只召唤一次，把问题写清楚通常比连续发多条短消息效果更好。</p>
+        </div>
+
+        <h2>使用建议</h2>
+        <ul>
+            <li><strong>一次一个问题</strong>：把背景和要求写在同一条消息里，回复会更贴合需要。</li>
+            <li><strong>说明输出形式</strong>：例如"用表格列出""不超过 100 字""给出代码"，AI 更容易按要求回答。</li>
+            <li><strong>不要连续追问</strong>：AI 回复通常需要一点时间，请等待其完成后再继续。</li>
+            <li><strong>涉及隐私的内容不要发</strong>：聊天室是公共空间，AI 对话也可能被其他成员看到。</li>
+        </ul>
+
+        <h2>AI 没有回应？</h2>
+        <ul>
+            <li><strong>前缀写错了</strong>：确认召唤前缀与界面提示一致，并注意不要写成全角字符。</li>
+            <li><strong>消息太长或请求过于频繁</strong>：稍后重试，并尽量精简问题。</li>
+            <li><strong>页面显示异常</strong>：刷新页面后再试，必要时参考 <a hhref="../lag/">聊天室消息延迟或卡顿</a>。</li>
+        </ul>
+
+        <h2>图片不显示</h2>
+        <p>AI 生成或返回的图片有时会被浏览器安全策略或网络代理拦截，显示为空白或裂图。请参考 <a hhref="../../../internet/answer/img-blocked/">AI 生成的图片无法显示怎么办？</a> 逐项排查。</p>
+
+        <p>需要注意，AI 的回答可能存在错误，重要信息请自行核实。发言时请遵守 <a hhref="../../../community/answer/general-rules/">社区基本发言规则与底线</a>。更多指令说明见 <a hhref="../ai-command/">AI 唤醒词与指令大全</a>。</p>
+    </main>
+</body>
+</html>

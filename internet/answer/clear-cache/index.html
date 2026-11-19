@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何正确清除网页缓存与 Cookie？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .warn {
+            background-color: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .warn p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0 24px 0; font-size: 15px; }
+        th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; color: var(--text-sub); }
+        th { background-color: var(--surface); color: var(--text); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回网络与技术</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>如何正确清除网页缓存与 Cookie？</h1>
+
+        <p>登录状态异常、页面显示旧内容、反复跳转时，清除本站点的缓存与 Cookie 通常能直接解决。关键在于"只清理本站点的数据"，而不是清空整个浏览器。</p>
+
+        <div class="highlight-box">
+            <p>建议优先只清理 hg 站点的数据。清空全部浏览数据会退出所有网站的登录，并可能影响密码保存。</p>
+        </div>
+
+        <h2>推荐做法：只清理本站点</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>在 hg 站点页面中，点击地址栏左侧的锁形或调节图标。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>选择「Cookie 和网站数据」或「网站信息」，再点击「删除 / 清除数据」。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>关闭该标签页，重新打开后访问 hg 站点，需要重新登录一次。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p>若问题依旧，按 <code>Ctrl+F5</code> 强制刷新一次，绕过缓存重新加载页面资源。</p></div>
+        </div>
+
+        <h2>缓存与 Cookie 分别影响什么</h2>
+        <table>
+            <tr><th>类型</th><th>保存内容</th><th>清除后的影响</th></tr>
+            <tr><td>Cookie</td><td>登录凭证、偏好设置</td><td>需要重新登录，设置恢复默认</td></tr>
+            <tr><td>缓存</td><td>图片、样式与脚本文件</td><td>首次打开会稍慢，显示最新版本</td></tr>
+        </table>
+
+        <h2>常见浏览器的入口位置</h2>
+        <ul>
+            <li><strong>Edge / Chrome</strong>：地址栏左侧图标 → 「Cookie 和网站数据」→ 删除；或设置 → 隐私搜索和服务 → 清除浏览数据。</li>
+            <li><strong>Firefox</strong>：地址栏左侧图标 → 「清除 Cookie 和网站数据」；或设置 → 隐私与安全 → Cookie 和网站数据 → 管理数据。</li>
+            <li><strong>Safari</strong>：Safari 菜单 → 设置 → 隐私 → 管理网站数据 → 搜索 hg 域名后删除。</li>
+            <li><strong>手机浏览器</strong>：菜单 → 设置 → 隐私 / 清除数据，选择仅针对当前站点。</li>
+        </ul>
+
+        <div class="warn">
+            <p>清除 Cookie 后需要重新登录。若账号开启了两步验证，请确认手机在身边，并能正常获取动态码。</p>
+        </div>
+
+        <h2>什么时候需要全部清除</h2>
+        <p>只有在"只清理本站点"无效，且您愿意重新登录各个网站时，才考虑清空全部浏览数据。更稳妥的替代方案是：</p>
+        <ul>
+            <li>用无痕窗口访问，验证问题是否与本地数据相关，见 <a hhref="../incognito/">推荐使用无痕模式进行测试</a>。</li>
+            <li>换一个浏览器对比，判断是否为本浏览器的数据或扩展问题。</li>
+            <li>关闭扩展后再试，避免误删全部数据。</li>
+        </ul>
+
+        <p>清理后仍有问题，可参考 <a hhref="../edge-loop/">Edge 浏览器无限跳转或白屏解决指南</a> 与 <a hhref="../error-400/">400 Bad Request 排查</a>。</p>
+    </main>
+</body>
+</html>

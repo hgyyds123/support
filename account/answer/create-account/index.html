@@ -3,39 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>创建 hg 账号 ·  hg 帮助</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>如何创建 hg 账号？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0; --primary: #0b57d0; }
-        @media (prefers-color-scheme: dark) { :root { --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746; --primary: #A8C7FA; } }
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --green-bg: #188038; --green-hover: #11632a;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --green-bg: #0D652D; --green-hover: #084d21;
+                --surface: #1E1F20;
+            }
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
-        a { text-decoration: none; color: inherit; }
+        a { text-decoration: none; color: var(--primary); }
+        a:hover { text-decoration: underline; }
+
         .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
-        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px;}
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
         .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
-        h1 { font-size: 32px; font-weight: 500; margin-bottom: 16px; color: var(--text); }
-        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; }
-        p { font-size: 16px; color: var(--text-sub); margin-bottom: 16px; }
-        ul { margin-left: 24px; margin-bottom: 16px; color: var(--text-sub); }
-        .update-date { font-size: 14px; color: var(--text-sub); margin-bottom: 32px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        .btn-register {
+            display: inline-flex; align-items: center; justify-content: center;
+            background-color: var(--green-bg); color: #FFFFFF !important;
+            padding: 12px 24px; border-radius: 8px;
+            font-size: 16px; font-weight: 500;
+            margin: 16px 0 32px 0; transition: background 0.2s;
+        }
+        .btn-register:hover { background-color: var(--green-hover); text-decoration: none; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--green-bg); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
     </style>
 </head>
 <body>
     <header class="top-nav">
         <div class="nav-left">
-            <!-- 这里的 ../ 会退回上一级目录 -->
-            <a href="../"><span class="material-symbols-outlined">arrow_back</span> 返回</a>
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回账号帮助</a>
         </div>
     </header>
+
     <main class="container">
-        <h1>创建 hg 账号 ·  hg 帮助</h1>
-        <div class="update-date">最后更新：2026年11月</div>
+        <h1>如何创建 hg 账号？</h1>
 
-        <p>hg1.dpdns.org/account</p>
+        <p>创建 hg 账号是免费的，只需要几分钟。整个过程不需要手机号，也不需要绑定支付方式。</p>
 
-        <h2>点击上方链接即可跳转至注册页面</h2>
+        <p>准备好开始了吗？点击下方按钮进入创建页面：</p>
+        <a hhref="https://hg1.dpdns.org/account/login/?redirect=/" class="btn-register">创建 hg 账号</a>
+
+        <h2>创建步骤</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p>在账号页面选择「注册」，然后输入您希望使用的邮箱地址。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p>系统会在邮箱中发送一条验证码，打开邮件并把验证码填进页面。收件箱里找不到时，请检查垃圾邮件目录。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p>设置登录密码。建议至少 8 位字符，并混合使用大小写字母、数字和符号。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p>阅读并同意 <a hhref="../../../terms/">服务条款</a> 与 <a hhref="../../../privacy/">隐私政策</a>，然后提交即可。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p>注册成功后会自动登录。此时您的账号邮箱是一个虚拟内部邮箱（@hgt.l.cd），对外只显示这个地址，请放心使用。</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <p>注册完成后，强烈建议立即开启两步验证（2FA），以保护您的账号安全。</p>
+        </div>
+
+        <h2>创建过程中遇到问题？</h2>
+        <ul>
+            <li>提示邮箱已被注册：说明您已经拥有账号，请直接 <a hhref="https://hg1.dpdns.org/account/login/?redirect=/">登录</a>，或参考 <a hhref="../forgot-password/">忘记密码了怎么办？</a></li>
+            <li>收不到验证码邮件：先确认邮箱拼写正确，再检查垃圾邮件目录，稍等几分钟后重新发送。</li>
+            <li>提交后出现 400 错误：请参考 <a hhref="../error-400/">为什么密码正确却提示“登录失败”或 400 错误？</a></li>
+        </ul>
+
+        <p>创建完成后，您可以继续阅读 <a hhref="../virtual-email/">虚拟内部邮箱（@hgt.l.cd）是什么？</a>，了解账号的身份标识，也可以参考 <a hhref="../../../safe_2fa/">两步验证（2FA）指南</a> 为账号加一把更可靠的锁。</p>
     </main>
 </body>
 </html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开启两步验证的准备工作 · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text); }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回安全与 2FA</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>开启两步验证的准备工作</h1>
+
+        <p>开启 2FA 只需要几分钟，但开始前请先确认下面几件事，避免中途卡住或把自己关在门外。</p>
+
+        <div class="highlight-box">
+            <p>最关键的一条：开启前先准备好能保存备用恢复码的地方，例如纸笔或密码管理器。</p>
+        </div>
+
+        <h2>开始前请确认</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>能正常登录账号</strong>：请先确认自己当前可以正常进入 hg 账号，再开始设置。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>手机在身边且电量充足</strong>：整个绑定过程需要用手机扫描屏幕上的二维码。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>已安装验证器 App</strong>：如果还没装，请先看 <a hhref="../authenticator-app/">哪些身份验证器 App 是推荐的？</a> 选择一个。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body"><p><strong>手机时间已自动同步</strong>：动态码依赖时间计算，时间偏差会直接导致验证失败。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body"><p><strong>准备好保存恢复码</strong>：绑定成功后系统会显示一组恢复码，请当场抄录或存入密码管理器。</p></div>
+        </div>
+
+        <h2>建议同时确认的事</h2>
+        <ul>
+            <li>是否还记得注册邮箱的密码：找回账号时可能会用到。</li>
+            <li>是否已经修改过一次密码：如果密码已在其他网站使用过，建议先改掉。</li>
+            <li>是否有正在使用的旧设备：换机时可用验证器的迁移功能，避免重新绑定。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>如果您使用的是共用设备，请先退出账号再设置，避免把验证器绑定到别人的手机上。</p>
+        </div>
+
+        <p>确认无误后，按 <a hhref="../scan-qr/">如何扫描二维码绑定验证器</a> 继续操作。若二维码无法扫描，可参考 <a hhref="../manual-key/">如何手动输入密钥（备用方式）</a>。</p>
+    </main>
+</body>
+</html>

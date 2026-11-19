@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>为什么密码正确却提示“登录失败”或 400 错误？ · hg 帮助</title>
+    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
+            --primary: #0b57d0;
+            --surface: #F8F9FA;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #131314; --text: #E3E3E3; --text-sub: #C4C7C5; --border: #444746;
+                --primary: #A8C7FA;
+                --surface: #1E1F20;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', 'Noto Sans SC', sans-serif; line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); }
+        a:hover { text-decoration: underline; }
+
+        .top-nav { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid var(--border); }
+        .nav-left a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 32px; color: var(--text); }
+        h2 { font-size: 22px; font-weight: 500; margin: 32px 0 16px; color: var(--text); }
+
+        p { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; }
+
+        ul, ol { margin-left: 24px; margin-bottom: 24px; color: var(--text-sub); font-size: 16px; }
+        li { margin-bottom: 8px; }
+
+        .highlight-box {
+            background-color: var(--surface); border-left: 4px solid var(--primary);
+            padding: 16px 20px; border-radius: 4px; margin: 24px 0;
+        }
+        .highlight-box p { margin-bottom: 0; color: var(--text); font-weight: 500; }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .step-num {
+            flex: 0 0 26px; height: 26px; border-radius: 50%;
+            background-color: var(--primary); color: #FFFFFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; margin-top: 4px;
+        }
+        .step-body { flex: 1; color: var(--text-sub); font-size: 16px; }
+        .step-body p { margin-bottom: 0; }
+        .step-body strong { color: var(--text); }
+
+        .faq { border-bottom: 1px solid var(--border); padding: 16px 0; }
+        .faq:last-child { border-bottom: none; }
+        .faq-q { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+        .faq-a { font-size: 16px; color: var(--text-sub); margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回账号帮助</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>为什么密码正确却提示“登录失败”或 400 错误？</h1>
+
+        <p>密码明明输对了，页面却提示「登录失败」或直接抛出 400 错误，这种情况通常不是密码本身的问题，而是请求在到达账号服务之前就被拦下或丢失了。下面按从简单到复杂的顺序排查。</p>
+
+        <div class="highlight-box">
+            <p>400 一般表示「服务器看不懂这次请求」，而不是「密码错误」。密码错误通常会有明确的提示文字。</p>
+        </div>
+
+        <h2>先试这三步</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body"><p><strong>重新加载页面</strong>，确认地址栏里的网址完整、没有多余的字符。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body"><p><strong>换一个浏览器或无痕窗口</strong>再登录一次，用来排除本地缓存和扩展插件的干扰。</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body"><p><strong>检查密码输入</strong>：确认没有开启大写锁定、输入法没有把字符变成全角，也没有多余的前后空格。</p></div>
+        </div>
+
+        <h2>常见原因</h2>
+        <div class="faq">
+            <div class="faq-q">浏览器缓存了旧的登录状态</div>
+            <div class="faq-a">旧的 Cookie 与新的请求混在一起时，服务端会认为请求不合法。请先 <a hhref="../../../internet/answer/clear-cache/">清除本站点的缓存与 Cookie</a>，然后重新登录。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">Edge 或某些浏览器出现跳转循环 / 白屏</div>
+            <div class="faq-a">这类问题会让登录请求发不出去，表面看起来像 400。请参考 <a hhref="../../../internet/answer/edge-loop/">Edge 浏览器无限跳转或白屏解决指南</a>。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">反向代理连接不稳定</div>
+            <div class="faq-a">如果同时出现「网络连接失败」或代理超时，说明请求没能完整送达。请参考 <a hhref="../../../internet/answer/request-timeout/">网络连接失败或代理超时怎么办？</a>。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">浏览器扩展拦截了请求</div>
+            <div class="faq-a">广告拦截、隐私保护类扩展可能删改提交的数据。请在无痕窗口（默认不加载扩展）中再试一次。</div>
+        </div>
+        <div class="faq">
+            <div class="faq-q">服务端临时异常（5xx）</div>
+            <div class="faq-a">若提示的是 500 而不是 400，通常是服务端临时故障，稍等几分钟再试。更多说明见 <a href="../../../internet/answer/error-500/">服务器内部错误 (500) 修复进度</a>。</div>
+        </div>
+
+        <h2>仍然无法登录</h2>
+        <ul>
+            <li>如果提示的是密码错误，请按 <a hhref="../forgot-password/">忘记密码了怎么办？</a> 重置密码。</li>
+            <li>如果账号开启了两步验证，动态码错误也会导致登录失败，请参考 <a hhref="../lost-2fa/">动态验证码错误或丢失怎么办？</a>。</li>
+            <li>以上都排除后，请通过 <a hhref="../contact-admin/">联系管理员</a> 反馈，并附上出现问题的具体时间、浏览器版本和完整错误提示。</li>
+        </ul>
+    </main>
+</body>
+</html>
