@@ -2,10 +2,12 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/material-symbols.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>聊天室消息延迟或卡顿 · hg 帮助</title>
-    <link rel="stylesheet" hhref="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
-    <link hhref="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
     <style>
         :root {
             --bg: #FFFFFF; --text: #1F1F1F; --text-sub: #444746; --border: #E0E0E0;
@@ -62,7 +64,7 @@
 <body>
     <header class="top-nav">
         <div class="nav-left">
-            <a hhref="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
+            <a href="../../"><span class="material-symbols-outlined">arrow_back</span> 返回聊天室帮助</a>
         </div>
     </header>
 
@@ -94,24 +96,24 @@
             <tr><th>现象</th><th>常见原因</th><th>处理方式</th></tr>
             <tr><td>新消息要等一会儿才出现</td><td>页面定时轮询，不是实时推送</td><td>属正常现象，等待刷新周期</td></tr>
             <tr><td>自己发的消息不显示</td><td>本地缓存或页面状态异常</td><td>强制刷新页面（Ctrl+F5）</td></tr>
-            <tr><td>图片与文字加载很慢</td><td>网络代理链路较慢</td><td>参考 <a hhref="../../../internet/answer/request-timeout/">网络连接失败或代理超时怎么办？</a></td></tr>
+            <tr><td>图片与文字加载很慢</td><td>网络代理链路较慢</td><td>参考 <a href="../../../internet/answer/request-timeout/">网络连接失败或代理超时怎么办？</a></td></tr>
             <tr><td>页面整体卡顿、输入迟钝</td><td>标签页过多、设备内存不足</td><td>关闭其他标签页后重试</td></tr>
             <tr><td>刷新后消息大量堆积</td><td>长时间未打开导致累积</td><td>向上滚动加载，属正常行为</td></tr>
         </table>
 
         <div class="highlight-box">
-            <p>聊天室并未使用 WebSocket，而是定时拉取新消息，这会影响实时性但不影响可靠性。详细说明见 <a hhref="../../../internet/answer/websocket/">为什么聊天室没有使用 WebSocket？</a>。</p>
+            <p>聊天室并未使用 WebSocket，而是定时拉取新消息，这会影响实时性但不影响可靠性。详细说明见 <a href="../../../internet/answer/websocket/">为什么聊天室没有使用 WebSocket？</a>。</p>
         </div>
 
         <h2>仍然卡顿</h2>
         <ul>
-            <li>清除本站点的缓存与 Cookie 后重新进入，见 <a hhref="../../../internet/answer/clear-cache/">如何正确清除网页缓存与 Cookie？</a>。</li>
+            <li>清除本站点的缓存与 Cookie 后重新进入，见 <a href="../../../internet/answer/clear-cache/">如何正确清除网页缓存与 Cookie？</a>。</li>
             <li>确认浏览器为较新版本，旧版本可能存在兼容问题。</li>
             <li>若所有人都慢，多为服务端或代理的临时压力，稍后再试。</li>
-            <li>提示音缺失属于另一类问题，见 <a hhref="../no-audio/">听不到新消息提示音</a>。</li>
+            <li>提示音缺失属于另一类问题，见 <a href="../no-audio/">听不到新消息提示音</a>。</li>
         </ul>
 
-        <p>如长时间未恢复，请通过 <a hhref="mailto:info@hg1.dpdns.org">邮件联系站长</a> 反馈，并附上出现时间与网络环境。</p>
+        <p>如长时间未恢复，请通过 <a href="mailto:info@hg1.dpdns.org">邮件联系站长</a> 反馈，并附上出现时间与网络环境。</p>
     </main>
 </body>
 </html>
