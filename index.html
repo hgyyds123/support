@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>用户中心 · hg</title>
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
+    <link rel="preload" href="/assets/fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face { font-family: 'Material Symbols Outlined'; font-style: normal; font-weight: 400; font-display: block; src: url('/assets/fonts/material-symbols-subset.woff2') format('woff2'); }
+        .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; display: inline-block; white-space: nowrap; letter-spacing: normal; text-transform: none; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,39 +17,39 @@
     <style>
         /* ================= M3 深浅色主题 ================= */
         :root {
-            --bg-color: #F8F9FA; 
-            --surface: #FFFFFF; 
+            --bg-color: #F8F9FA;
+            --surface: #FFFFFF;
             --surface-variant: #F0F4F9;
             --text-main: #1F1F1F;
             --text-sub: #444746;
             --border-color: #C4C7C5;
             --primary-blue: #0b57d0;
             --hover-bg: #F0F4F9;
-            
+
             /* 联系卡片专用色 */
-            --contact-bg: #E8F0FE; 
+            --contact-bg: #E8F0FE;
             --contact-text: #041E49;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-color: #131314; 
-                --surface: #1E1F20; 
+                --bg-color: #131314;
+                --surface: #1E1F20;
                 --surface-variant: #282A2C;
                 --text-main: #E3E3E3;
                 --text-sub: #C4C7C5;
                 --border-color: #444746;
                 --primary-blue: #A8C7FA;
                 --hover-bg: #282A2C;
-                
+
                 /* 联系卡片专用色 */
-                --contact-bg: #1A2332; 
+                --contact-bg: #1A2332;
                 --contact-text: #D3E3FD;
             }
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -80,17 +84,17 @@
         }
 
         .hero { text-align: center; width: 100%; margin-bottom: 48px; display: flex; flex-direction: column; align-items: center; }
-        
-        .hero-logo { 
-            width: 64px; height: 64px; border-radius: 50%; 
-            background-color: var(--surface); color: var(--text-main); 
-            display: flex; align-items: center; justify-content: center; 
-            font-size: 32px; font-weight: 700; margin-bottom: 24px; 
+
+        .hero-logo {
+            width: 64px; height: 64px; border-radius: 50%;
+            background-color: var(--surface); color: var(--text-main);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; font-weight: 700; margin-bottom: 24px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .hero h1 { font-size: 32px; font-weight: 400; color: var(--primary-blue); margin-bottom: 32px; }
-        
+
         .search-box {
             width: 100%; max-width: 640px;
             height: 56px;
@@ -101,9 +105,9 @@
             transition: box-shadow 0.2s, border-color 0.2s;
             background: var(--surface);
         }
-        .search-box:focus-within { 
-            border-color: var(--primary-blue); 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+        .search-box:focus-within {
+            border-color: var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .search-box span { color: var(--text-sub); margin-right: 16px; font-size: 24px; }
         .search-box input { flex: 1; background: transparent; border: none; outline: none; font-size: 16px; color: var(--text-main); }
@@ -133,7 +137,7 @@
             height: 140px;
             justify-content: center;
         }
-        
+
         .product-card:hover {
             background: var(--hover-bg);
             transform: translateY(-2px);
@@ -175,7 +179,7 @@
             transition: opacity 0.2s;
         }
         .btn-contact:hover { opacity: 0.85; }
-        
+
         /* 深色模式下反转按钮文字颜色 */
         @media (prefers-color-scheme: dark) {
             .btn-contact { color: #131314; }
@@ -203,11 +207,11 @@
     </header>
 
     <main class="main-container">
-        
+
         <div class="hero">
             <div class="hero-logo">hg</div>
             <h1>应如何寻求帮助？</h1>
-            
+
             <div class="search-box">
                 <span class="material-symbols-outlined">search</span>
                 <input type="text" placeholder="请描述您遇到的问题">
@@ -253,6 +257,8 @@
                 <h3>服务条款</h3>
             </a>
 
+
+
             <a href="mailto:info@hg1.dpdns.org" class="product-card">
                 <span class="material-symbols-outlined product-icon">mail</span>
                 <h3>邮件联系</h3>
@@ -262,10 +268,10 @@
         <!-- 底部联系区（优雅地融入背景） -->
         <div class="contact-card">
             <h2>还是没有解决您的问题？</h2>
-            <p>如果您遇到了上述指南中未包含的 Bug 或需要人工协助，请直接发邮件联系我们。我们会尽快回复。</p>
-            <a href="mailto:info@hg1.dpdns.org" class="btn-contact">
-                <span class="material-symbols-outlined">mail</span>
-                发送邮件至 info@hg1.dpdns.org
+            <p>如果您遇到了上述指南中未包含的 Bug 或需要人工协助，可以提交工单，或直接发邮件联系我们。我们会尽快回复。</p>
+            <a href="./admin/submit-ticket.html" class="btn-contact">
+                <span class="material-symbols-outlined">support_agent</span>
+                提交工单
             </a>
         </div>
 
