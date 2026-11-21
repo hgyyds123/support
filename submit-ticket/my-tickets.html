@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的工单 · hg</title>
+
+    <link rel="preload" href="/assets/fonts/material-symbols.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face { font-family: 'Material Symbols Outlined'; font-style: normal; font-weight: 400; font-display: block; src: url('/assets/fonts/material-symbols.woff2') format('woff2'); }
+        .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; display: inline-block; white-space: nowrap; letter-spacing: normal; text-transform: none; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --surface: #FFFFFF;
+            --surface-variant: #F0F4F9;
+            --text-main: #1F1F1F;
+            --text-sub: #444746;
+            --border-color: #C4C7C5;
+            --primary-blue: #0b57d0;
+            --hover-bg: #F0F4F9;
+            --green: #188038;
+            --error: #B3261E;
+            --open-bg: #E8F0FE;
+            --open-text: #0B57D0;
+            --replied-bg: #E6F4EA;
+            --replied-text: #137333;
+            --closed-bg: #F1F3F4;
+            --closed-text: #5F6368;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #131314;
+                --surface: #1E1F20;
+                --surface-variant: #282A2C;
+                --text-main: #E3E3E3;
+                --text-sub: #C4C7C5;
+                --border-color: #444746;
+                --primary-blue: #A8C7FA;
+                --hover-bg: #282A2C;
+                --green: #0D652D;
+                --error: #F2B8B5;
+                --open-bg: #1A2B45;
+                --open-text: #A8C7FA;
+                --replied-bg: #1E3A1E;
+                --replied-text: #81C995;
+                --closed-bg: #2A2B2C;
+                --closed-text: #C4C7C5;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a { text-decoration: none; color: var(--primary-blue); }
+
+        .top-bar {
+            height: 64px; display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; border-bottom: 1px solid var(--border-color);
+            background-color: var(--surface);
+        }
+        .top-bar .left { display: flex; align-items: center; gap: 16px; font-size: 20px; color: var(--text-main); }
+        .top-bar .icon-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; color: var(--text-sub); }
+        .top-bar .icon-btn:hover { background-color: var(--surface-variant); }
+        .top-bar .right { display: flex; align-items: center; gap: 16px; font-size: 14px; color: var(--primary-blue); font-weight: 500; }
+
+        .main-container {
+            flex: 1;
+            max-width: 800px;
+            margin: 32px auto 64px;
+            padding: 0 20px;
+        }
+
+        .page-head { margin-bottom: 24px; }
+        .page-head h1 { font-size: 28px; font-weight: 400; color: var(--text-main); margin-bottom: 4px; }
+        .page-head p { font-size: 14px; color: var(--text-sub); }
+
+        .notice {
+            width: 100%; background-color: var(--surface);
+            border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 16px 20px; margin-bottom: 24px;
+            font-size: 15px; color: var(--text-sub);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .notice.ok { border-left: 4px solid var(--green); }
+        .notice.error { border-left: 4px solid var(--error); background-color: #FCE8E6; }
+        .notice .material-symbols-outlined { color: var(--primary-blue); }
+        .notice strong { color: var(--text-main); }
+        .notice a { font-weight: 500; }
+
+        .user-bar {
+            display: flex; align-items: center; gap: 12px;
+            background-color: var(--surface-variant);
+            border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 12px 16px; margin-bottom: 24px;
+        }
+        .user-bar .user-name { font-weight: 500; color: var(--text-main); }
+
+        .ticket-list { display: flex; flex-direction: column; gap: 12px; }
+        .ticket-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px; padding: 20px 22px;
+        }
+        .ticket-card .row1 { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .badge { font-size: 12px; font-weight: 500; padding: 2px 10px; border-radius: 9999px; white-space: nowrap; }
+        .badge-open { background-color: var(--open-bg); color: var(--open-text); }
+        .badge-replied { background-color: var(--replied-bg); color: var(--replied-text); }
+        .badge-closed { background-color: var(--closed-bg); color: var(--closed-text); }
+        .ticket-card .title { font-size: 16px; font-weight: 500; color: var(--text-main); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .ticket-card .prio { font-size: 12px; font-weight: 500; white-space: nowrap; }
+        .prio-high { color: #C5221F; }
+        .prio-normal { color: var(--text-sub); }
+        .prio-low { color: #B06000; }
+        .ticket-card .row2 { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; color: var(--text-sub); margin-bottom: 10px; }
+        .ticket-card .desc { font-size: 14px; color: var(--text-sub); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+        .reply-block {
+            margin-top: 12px; padding: 12px 16px;
+            background-color: var(--replied-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+        .reply-block .reply-label { font-size: 12px; font-weight: 500; color: var(--replied-text); margin-bottom: 6px; }
+        .reply-block .reply-text { font-size: 14px; color: var(--text-main); white-space: pre-wrap; line-height: 1.6; }
+
+        .empty { text-align: center; padding: 48px 24px; color: var(--text-sub); background-color: var(--surface); border: 1px solid var(--border-color); border-radius: 16px; }
+        .empty .material-symbols-outlined { font-size: 48px; margin-bottom: 12px; opacity: 0.6; }
+
+        .not-logged { text-align: center; padding: 64px 24px; background-color: var(--surface); border: 1px solid var(--border-color); border-radius: 16px; }
+        .not-logged .material-symbols-outlined { font-size: 48px; color: var(--text-sub); margin-bottom: 16px; opacity: 0.6; }
+        .not-logged h2 { font-size: 18px; font-weight: 500; color: var(--text-main); margin-bottom: 8px; }
+        .not-logged p { color: var(--text-sub); margin-bottom: 20px; }
+
+        .btn-filled { background-color: var(--primary-blue); color: #FFFFFF; height: 40px; padding: 0 24px; border-radius: 9999px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; font-family: inherit; transition: opacity 0.2s; }
+        .btn-filled:hover { opacity: 0.9; }
+
+        @media (max-width: 640px) {
+            .top-bar .right { gap: 8px; font-size: 13px; }
+            .ticket-card { padding: 16px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="left">
+            <a href="/" class="icon-btn"><span class="material-symbols-outlined">arrow_back</span></a>
+            我的工单
+        </div>
+        <div class="right">
+            <a href="add-a-new/index.html"><span class="material-symbols-outlined">add</span> 提交新工单</a>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <div class="page-head">
+            <h1>我的工单</h1>
+            <p>查看您提交的工单处理进度与站长回复</p>
+        </div>
+
+        <div id="loginNotice" style="display:none;"></div>
+
+        <div id="app">
+            <div class="user-bar">
+                <span class="material-symbols-outlined">person</span>
+                <span class="user-name" id="displayName"></span>
+            </div>
+            <div class="ticket-list" id="ticketList"></div>
+        </div>
+
+    </div>
+
+    <script src="/config.js"></script>
+    <script>
+        const SUPABASE_URL = (window.CONFIG && CONFIG.SUPABASE_URL) || '';
+        const SUPABASE_KEY = (window.CONFIG && CONFIG.SUPABASE_KEY) || '';
+        const CONFIG_MISSING = !(SUPABASE_URL && SUPABASE_KEY);
+
+        function getCookie(name) {
+            const parts = ('; ' + document.cookie).split('; ' + name + '=');
+            return parts.length === 2 ? parts.pop().split(';').shift() : null;
+        }
+
+        const userName = getCookie('hg_user_name');
+        const displayNameEl = document.getElementById('displayName');
+        const loginNotice = document.getElementById('loginNotice');
+        const app = document.getElementById('app');
+        const ticketList = document.getElementById('ticketList');
+
+        if (!userName || userName === 'undefined') {
+            loginNotice.style.display = 'block';
+            app.style.display = 'none';
+            loginNotice.className = 'notice error';
+            loginNotice.innerHTML = '<span class="material-symbols-outlined">error</span>' +
+                '尚未登录。<a href="https://hg1.dpdns.org/account/login/?redirect=/" target="_blank" rel="noopener">去登录</a>';
+        } else {
+            displayNameEl.textContent = decodeURIComponent(userName);
+            loadTickets();
+        }
+
+        async function loadTickets() {
+            ticketList.innerHTML = '<div class="empty"><span class="material-symbols-outlined">hourglass_empty</span><p>加载中...</p></div>';
+            if (CONFIG_MISSING) {
+                ticketList.innerHTML = '<div class="empty"><span class="material-symbols-outlined">error</span><p>工单系统尚未配置，请联系站长。</p></div>';
+                return;
+            }
+            try {
+                const res = await fetch(
+                    SUPABASE_URL + '/rest/v1/tickets?select=*&user_name=eq.' + encodeURIComponent(userName) + '&order=created_at.desc',
+                    {
+                        headers: {
+                            'apikey': SUPABASE_KEY,
+                            'Authorization': 'Bearer ' + SUPABASE_KEY
+                        }
+                    }
+                );
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const tickets = await res.json();
+                renderTickets(tickets);
+            } catch (err) {
+                console.error('加载工单失败：', err);
+                ticketList.innerHTML = '<div class="empty"><span class="material-symbols-outlined">error</span><p>加载失败，请检查网络后重试。</p></div>';
+            }
+        }
+
+        function renderTickets(tickets) {
+            if (!tickets || tickets.length === 0) {
+                ticketList.innerHTML = '<div class="empty"><span class="material-symbols-outlined">inbox</span><p>暂无工单</p></div>';
+                return;
+            }
+            ticketList.innerHTML = tickets.map(t => {
+                const statusLabel = { open: '待处理', replied: '已回复', closed: '已关闭' }[t.status] || t.status;
+                const prioLabel = { high: '紧急', normal: '普通', low: '低' }[t.priority || 'normal'] || '普通';
+                const categoryLabel = { account: '账号与登录', safe_2fa: '安全与2FA', talkroom: '聊天室', internet: '网络与技术', community: '社区规范', other: '其他' }[t.category] || '其他';
+                const replyHtml = t.reply
+                    ? `<div class="reply-block"><div class="reply-label">💬 站长回复</div><div class="reply-text">${esc(t.reply)}</div></div>`
+                    : '';
+                return `
+                    <div class="ticket-card">
+                        <div class="row1">
+                            <span class="badge badge-${t.status}">${statusLabel}</span>
+                            <span class="title">${esc(t.title)}</span>
+                            <span class="prio prio-${t.priority || 'normal'}">${prioLabel}</span>
+                        </div>
+                        <div class="row2">
+                            <span>📁 ${categoryLabel}</span>
+                            <span>🕐 ${formatTime(t.created_at)}</span>
+                            ${t.reply ? '<span style="color:var(--replied-text);font-weight:500;">✅ 已回复</span>' : '<span style="color:var(--text-sub);">⏳ 处理中</span>'}
+                        </div>
+                        <div class="desc">${esc((t.description || '').slice(0, 140))}${(t.description || '').length > 140 ? '…' : ''}</div>
+                        ${replyHtml}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function formatTime(iso) {
+            if (!iso) return '—';
+            const d = new Date(iso);
+            if (isNaN(d)) return '—';
+            const p = n => String(n).padStart(2, '0');
+            return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+        }
+        function esc(s) {
+            if (s === null || s === undefined) return '';
+            return String(s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+    </script>
+</body>
+</html>
